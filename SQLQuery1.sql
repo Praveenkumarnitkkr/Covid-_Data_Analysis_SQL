@@ -34,7 +34,7 @@ order by 1,2
 
 Select Location, date, Population, total_cases,  (total_cases/population)*100 as PercentPopulationInfected
 From covid.dbo.covidDeaths
---Where location like '%states%'
+--Where location like '%India%'
 order by 1,2
 
 
@@ -50,7 +50,6 @@ order by PercentPopulationInfected desc
 
 Select Location, MAX(cast(Total_deaths as int)) as TotalDeathCount
 From covid.dbo.covidDeaths
---Where location like '%states%'
 Where continent is not null 
 Group by Location
 order by TotalDeathCount desc
